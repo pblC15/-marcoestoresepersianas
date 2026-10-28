@@ -1,0 +1,352 @@
+:root {
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'DM Sans',sans-serif;
+}
+
+h1,h2,h3 {
+  font-family:Manrope,sans-serif;
+}
+
+a,button {
+  transition:all .2s ease;
+}
+
+a:focus-visible,button:focus-visible {
+  outline:3px solid #38bdf8;
+  outline-offset:3px;
+}
+
+.hero-bg {
+  background:radial-gradient(circle at 70% 30%,#123d66 0,#071b32 52%,#041323 100%);
+}
+
+.btn-wa {
+  background:#1ebc58;
+}
+
+.btn-wa:hover {
+  background:#16a34a;
+  transform:translateY(-2px);
+}
+
+.eyebrow {
+  display:block;
+  color:#0864b8;
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:.18em;
+  margin-bottom:17px;
+}
+
+.section-title {
+  font-family:Manrope,sans-serif;
+  font-weight:800;
+  font-size:clamp(2rem,3.5vw,3.4rem);
+  line-height:1.16;
+  letter-spacing:-.045em;
+}
+
+.service-card {
+  background:#fff;
+  border:1px solid #e6edf3;
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 8px 25px #092c4b06;
+  display:flex;
+  flex-direction:column;
+  min-height:305px;
+}
+
+.service-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px #092c4b15;
+}
+
+.service-icon {
+  display:grid;
+  place-items:center;
+  background:#e8f3fc;
+  color:#0864b8;
+  width:55px;
+  height:55px;
+  border-radius:15px;
+  font-size:27px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.service-card h3 {
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+
+.service-card p {
+  color:#64748b;
+  font-size:14px;
+  line-height:1.75;
+  margin:13px 0 24px;
+}
+
+.service-card a {
+  font-weight:800;
+  color:#0864b8;
+  font-size:13px;
+  margin-top:auto;
+}
+
+.feature-icon {
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#d9f2e2;
+  color:#159447;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  flex:none;
+}
+
+.gallery-item {
+  display:block;
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  background:#e6edf3;
+  min-height:175px;
+  cursor:zoom-in;
+}
+
+.gallery-item img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+  transition:transform .5s;
+}
+
+.gallery-item:hover img {
+  transform:scale(1.065);
+}
+
+.gallery-item::after {
+  content:'↗';
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  color:#071b32;
+  font-weight:bold;
+  opacity:0;
+  transform:translateY(7px);
+  transition:all .2s;
+}
+
+.gallery-item:hover::after {
+  opacity:1;
+  transform:translateY(0);
+}
+
+#mobileNav a {
+  display:block;
+  padding:12px 0;
+  font-size:15px;
+  font-weight:700;
+  border-bottom:1px solid #edf2f7;
+}
+
+#mobileNav a:last-child {
+  color:#0e9f4b;
+  border:0;
+}
+
+.lightbox {
+  position:fixed;
+  inset:0;
+  max-width:96vw;
+  max-height:94vh;
+  border:0;
+  padding:0;
+  background:transparent;
+  overflow:visible;
+}
+
+.lightbox::backdrop {
+  background:#031326e8;
+}
+
+.lightbox img {
+  max-height:92vh;
+  max-width:96vw;
+  object-fit:contain;
+  border-radius:12px;
+}
+
+@media(max-width:767px) {
+  .gallery-item {
+    min-height:165px;
+  }
+
+  .gallery-item.col-span-2 {
+    min-height:340px;
+  }
+
+  .hero-photo img {
+    height:390px;
+  }
+
+  .service-card {
+    min-height:270px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  :root {
+    scroll-behavior:auto;
+  }
+
+  *,*::before,*::after {
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+
+/* Revisão visual e responsiva */
+.wa-link {
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+}
+
+.wa-link .wa-icon {
+  flex:none;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.service-card .wa-link {
+  align-self:flex-start;
+}
+
+.trust-strip {
+  position:relative;
+}
+
+.trust-card {
+  transition:box-shadow .2s ease,transform .2s ease;
+}
+
+.trust-card:hover {
+  box-shadow:0 12px 26px #0c54831a;
+  transform:translateY(-2px);
+}
+
+.hero-service-badge {
+  max-width:100%;
+  width:max-content;
+  box-sizing:border-box;
+}
+
+.hero-photo-label {
+  pointer-events:none;
+}
+
+.whatsapp-float {
+  position:fixed;
+  right:clamp(16px,3vw,32px);
+  bottom:clamp(16px,3vw,30px);
+  z-index:60;
+  display:grid;
+  place-items:center;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#1ebc58;
+  color:#fff;
+  box-shadow:0 8px 28px #0b4f2a55;
+  border:3px solid #fff;
+  transition:transform .2s ease,background .2s ease;
+}
+
+.whatsapp-float:hover {
+  transform:translateY(-4px) scale(1.03);
+  background:#16a34a;
+}
+
+.whatsapp-float:focus-visible {
+  outline:3px solid #38bdf8;
+  outline-offset:4px;
+}
+
+.map-frame iframe {
+  width:100%;
+  min-height:350px;
+}
+
+@media(max-width:639px) {
+  .hero-service-badge {
+    width:100%;
+    margin-top:14px;
+  }
+
+  .hero-service-badge .flex {
+    align-items:flex-start;
+  }
+
+  .hero-service-badge strong {
+    line-height:1.4;
+  }
+
+  .whatsapp-float {
+    width:58px;
+    height:58px;
+    right:16px;
+    bottom:16px;
+  }
+
+  .map-frame iframe {
+    height:350px;
+  }
+
+  .hero-photo-label {
+    padding:18px;
+    padding-top:70px;
+  }
+
+  .hero-photo-label span {
+    font-size:11px;
+  }
+
+}
+
+/* Instagram: SVG incorporado, sem dependências de bibliotecas externas */
+.instagram-icon { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+.instagram-footer-link { display: inline-flex; align-items: center; gap: 10px; }
+.header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.instagram-header-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 43px; height: 43px; flex-shrink: 0; border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(35deg, #feda75 0%, #fa7e1e 23%, #d62976 53%, #962fbf 76%, #4f5bd5 100%);
+  box-shadow: 0 5px 15px rgba(150, 47, 191, .22);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.instagram-header-link:hover { transform: translateY(-2px); box-shadow: 0 7px 20px rgba(150, 47, 191, .35); }
+.instagram-header-link:focus-visible, .instagram-footer-link:focus-visible { outline: 3px solid #38bdf8; outline-offset: 3px; }
+.instagram-mobile-link { display: flex; align-items: center; gap: 10px; }
+@media (max-width: 639px) {
+  .header-actions { gap: 6px; }
+  .instagram-header-link { width: 39px; height: 39px; border-radius: 11px; }
+  .instagram-header-link .instagram-icon { width: 21px; height: 21px; }
+}
