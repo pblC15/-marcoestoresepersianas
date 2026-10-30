@@ -254,7 +254,7 @@ a:focus-visible,button:focus-visible {
 
 .hero-service-badge {
   max-width:100%;
-  width:max-content;
+  width:100%;
   box-sizing:border-box;
 }
 
@@ -351,11 +351,24 @@ a:focus-visible,button:focus-visible {
   .instagram-header-link .instagram-icon { width: 21px; height: 21px; }
 }
 
-/* Fotografia principal: imagem inteira, sem corte da parte superior. */
+/* A fotografia ocupa todo o bloco, preservando o topo no enquadramento. */
 .hero-photo { background: #b5967e; }
-.hero-feature-image { display: block; width: 100%; height: 530px; object-fit: contain; object-position: center top; }
+.hero-feature-image {
+  display: block;
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  object-position: center top;
+}
 @media (max-width: 639px) {
-  .hero-feature-image { height: auto; max-height: 590px; object-fit: contain; }
+  .hero-feature-image { height: 440px; object-fit: cover; object-position: center top; }
+}
+/* Dois cartões iguais, alinhados e responsivos, sem sobreposição com a fotografia. */
+.hero-badges { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.hero-badges .hero-service-badge { display: flex; align-items: center; min-height: 132px; }
+@media (max-width: 639px) {
+  .hero-badges { grid-template-columns: 1fr; }
+  .hero-badges .hero-service-badge { min-height: 116px; margin-top: 0; }
 }
 /* O titulo da secao de vantagens fica acima da fotografia em todas as larguras. */
 .advantages-heading { text-align: left; }
